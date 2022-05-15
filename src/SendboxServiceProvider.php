@@ -17,7 +17,7 @@ class SendboxServiceProvider extends PackageServiceProvider
      *
      * @return void
      */
-    public function packageRegistered(): void
+    public function packageRegistered()
     {
         $this->app->singleton(Client::class, function (Application $app) {
             return new Client(Config::get('sendbox.access_token'), [
@@ -50,7 +50,7 @@ class SendboxServiceProvider extends PackageServiceProvider
      *
      * @return void
      */
-    public function boot(): void
+    public function boot()
     {
         $this->publishes([
             __DIR__ . '/../config/sendbox.php' => App::configPath('sendbox.php')
