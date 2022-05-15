@@ -16,7 +16,7 @@ class SendboxServiceProvider extends PackageServiceProvider
      *
      * @return void
      */
-    public function packageRegistered()
+    public function packageRegistered(): void
     {
         $this->app->singleton(Client::class, function (Application $app) {
             return new Client(Config::get('sendbox.access_token'), [
@@ -42,5 +42,18 @@ class SendboxServiceProvider extends PackageServiceProvider
             ->name('laravel-sendbox')
             ->hasConfigFile()
             ->hasCommand(SendboxCommand::class);
+    }
+
+    /**
+     * Boot the provider
+     *
+     * @return void
+     */
+    public function boot(): void
+    {
+        $this->publishes([
+            __DIR__ . '/../config/sendbox.php' => App::configPath('sendbox.php')
+
+        ], 'sendbox.config');
     }
 }
