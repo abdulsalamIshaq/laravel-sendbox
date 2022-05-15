@@ -1,0 +1,66 @@
+{
+    "name": "abdulsalamishaq/laravel-sendbox",
+    "description": "This is my package laravel-sendbox",
+    "keywords": [
+        "abdulsalamishaq",
+        "laravel",
+        "laravel-sendbox"
+    ],
+    "homepage": "https://github.com/abdulsalamishaq/laravel-sendbox",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "abdulsalamishaq",
+            "email": "abdulsalamkayodeishaq@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "abdulsalamishaq/sendbox": "^1.0",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-package-tools": "^1.9.2"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "AbdulsalamIshaq\\Sendbox\\": "src",
+            "AbdulsalamIshaq\\Sendbox\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AbdulsalamIshaq\\Sendbox\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AbdulsalamIshaq\\Sendbox\\SendboxServiceProvider"
+            ],
+            "aliases": {
+                "Sendbox": "AbdulsalamIshaq\\Sendbox\\Facades\\Sendbox"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
