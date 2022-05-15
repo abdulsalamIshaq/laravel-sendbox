@@ -7,6 +7,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use AbdulsalamIshaq\Sendbox\Commands\SendboxCommand;
 use AbdulsalamIshaq\Sendbox\Client;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
 class SendboxServiceProvider extends PackageServiceProvider
