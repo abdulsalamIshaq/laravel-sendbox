@@ -43,15 +43,7 @@ class SendboxServiceProvider extends PackageServiceProvider
             ->name('laravel-sendbox')
             ->hasConfigFile()
             ->hasCommand(SendboxCommand::class);
-    }
 
-    /**
-     * Boot the provider
-     *
-     * @return void
-     */
-    public function boot()
-    {
         $this->publishes([
             __DIR__ . '/../config/sendbox.php' => App::configPath('sendbox.php')
 
